@@ -3,6 +3,8 @@ const path = require('path')
 const port = process.env.PORT || 8081
 const app = express()
 
+// Routes
+const catRoutes = require('./api/routes/cats')
 
 //production mode
 if (process.env.NODE_ENV === 'production') {
@@ -13,9 +15,7 @@ if (process.env.NODE_ENV === 'production') {
 		})
 }
 
-app.get('/cats', function (req, res) {
-	res.json({ 'result': 'ok' })
-})
+app.use('/cats', catRoutes)
 
 app.listen(port, () => 
 	console.log(`Server listening on port: ${port}`))
