@@ -8,6 +8,7 @@ class Home extends Component {
 		this.state = {
 			cats: [],
 			board: [],
+			error: '',
 			loading: true
 		}
 	}
@@ -21,7 +22,7 @@ class Home extends Component {
 		// .then(data => console.log(data.result))
 		.then(data => this.setState({ 
 			cats: data.result, 
-			board: this.generateBoard(data.result), 
+			board: this.generateBoard(data.result),
 			loading: false 
 		}))
 	}
@@ -29,29 +30,36 @@ class Home extends Component {
 	handleClick = id => {
 		// Push result to Scoreboard
 		console.log(id)
-		// New board
-
+		fetch(`/cats/${id}`, {
+			method: 'PATCH',
+			headers: { 'Content-Type': 'application/json' }
+		})
+		.then(res => {
+			res.status === 200 
+				? this.setState({ board: this.generateBoard(this.state.cats) }) 
+				: this.setState({ error: 'Something went wrong' })
+		})
 	}
 
 	generateBoard(object) {
 		const result = []
 		const cats = shuffle(object)
+
 		while (result.length < 2) {
 			const cat = cats.pop()
 			result.push(cat)
 		}
-		return shuffle(result)
+		return result
 	}
 
 	render() {
-		const { board, loading } = this.state
-
-		console.log(board)
+		const { board, loading, error } = this.state
 
 		if (loading) return <p>Loading...</p>
 
 		return (
 			<div className="facemash">
+				{ error && <p>{error}</p> }
 				<div key={board[0].id}>
 					<img src={ board[0].url } onClick={ () => this.handleClick(board[0].id) } />
 				</div>
