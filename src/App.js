@@ -3,6 +3,16 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
+	componentDidMount() {
+		fetch('/cats', {
+			method: 'GET',
+			headers: { 'Content-Type': 'application/json' }
+		})
+		.then(res => res.json())
+		.then(data => console.log(data))
+	}
+
   render() {
     return (
       <div className="App">
