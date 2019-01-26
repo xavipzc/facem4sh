@@ -5,6 +5,7 @@ const app = express()
 
 // Routes
 const catRoutes = require('./api/routes/cats')
+const scoreRoutes = require('./api/routes/scores')
 
 //production mode
 if (process.env.NODE_ENV === 'production') {
@@ -16,6 +17,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.use('/cats', catRoutes)
+app.use('/scores', scoreRoutes)
 
 app.listen(port, () => 
 	console.log(`Server listening on port: ${port}`))

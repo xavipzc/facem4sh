@@ -1,6 +1,6 @@
 // Navbar
 .navbar {
-	border-bottom: 1px solid $color-grey;
+	border-bottom: 1px solid $color-grey-light;
 
 	ul {
 		margin: 0;
@@ -10,40 +10,53 @@
 		li {
 			display: inline-block;
 			margin-right: 15px;
-
-			a {
-				text-decoration: none;
-				color: $color-grey;
-
-				&:hover {
-					color: $color-main;
-				}
-			}
 		}
 	}
 }
 
+// Facemash page
+
 .facemash {
-	.left {
-		background-color: $color-main;
+	background-color: $color-grey-lighter;
+
+	.title {
+		text-align: center;
 	}
-	.right {
-		background-color: ligthen($color-main, 10%);
+
+	.img-cat {
+		cursor: pointer;
+		height: 30vw;
+		width: 30vw;
+		border-radius: 50%;
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		transition: all ease .15s;
+
+		&:hover {
+			transform: scale(1.2);
+			box-shadow: 0px 20px 30px -10px rgba(153,153,153,0.5);
+			border: 10px solid $color-secondary;
+		}
 	}
 }
 
-// Images
-.img-cat {
-	cursor: pointer;
-	height: 30vw;
-	width: 30vw;
-	border-radius: 50%;
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
-	background-size: cover;
-	transition: all ease .15s;
+// Scoreboard
 
-	&:hover {
-		transform: scale(1.2);
+.scoreboard {
+	background-color: $color-grey-lighter;
+
+	.title {
+		text-align: center;
+	}
+
+	.img-cat {
+		display: inline-block;
+		height: 30px;
+		width: 30px;
+		border-radius: 50%;
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		background-size: cover;
 	}
 }

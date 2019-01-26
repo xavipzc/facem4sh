@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 
 import Home from './Pages/Home'
+import Scoreboard from './Pages/Scoreboard'
 
 class App extends Component {
 	render() {
@@ -13,16 +14,15 @@ class App extends Component {
 							<li>
 								<Link to="/">Facemash</Link>
 							</li>
-							<li>
-								<Link to="/scoreboard">Scoreboard</Link>
-							</li>
 						</ul>
 					</header>
 					<Switch>
 						<Route exact path="/" component={ Home } />
-						{/* <Route exact path="/scoreboard" component={ ScoreBoard } /> */}
+						<Route exact path="/scoreboard" component={ Scoreboard } />
 					</Switch>
-					<footer>Facemash by Xavier Pouzenc 🚀</footer>
+					<footer>
+						<Link to="/scoreboard">🐱Discover which cats rocks</Link>
+					</footer>
 				</div>
 			</Router>
 		)

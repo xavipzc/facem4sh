@@ -7,11 +7,22 @@ $font: -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif
 $color-main: #E4C48C;
 $color-secondary: white;
 
-$color-grey: #999;
+$color-grey: #343C44;
+$color-grey-light: lighten($color-grey, 50%);
+$color-grey-lighter: lighten($color-grey, 70%);
 
 body {
 	font-family: $font;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background-color: $color-secondary;
+}
+
+a {
+	text-decoration: none;
+	color: $color-grey;
+
+	&:hover {
+		color: $color-main;
+	}
 }

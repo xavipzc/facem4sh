@@ -5,16 +5,18 @@
 }
 
 header,
-footer {
+footer,
+.scoreboard {
 	grid-column: 1 / span 2;
 }
 
 .facemash {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 20% auto;
 	grid-column: 1 / span 2;
-	height: 100%;
 
+	.title { grid-column: 1 / span 2; }
 	.left { grid-column: 1; }
 	.right { grid-column: 2; }
 

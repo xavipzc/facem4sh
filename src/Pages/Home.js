@@ -59,6 +59,10 @@ class Home extends Component {
 
 		return (
 			<div className="facemash">
+				<div className="title">
+					<h1>FaceMash</h1>
+					<p>Which cat rocks more ? Do your choice !</p>
+				</div>
 				{ error && <p>{error}</p> }
 				<div className="left" key={board[0].id}>
 					<div className="img-cat" 
