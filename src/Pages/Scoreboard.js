@@ -19,17 +19,24 @@ class Scoreboard extends Component {
 			headers: { 'Content-Type': 'application/json' }
 		})
 		.then(res => res.json())
-		.then(data => this.setState({ 
-			cats: data.result,
-			votes: this.countVotes(data.result),
-			loading: false 
-		}))
+		.then(data => (data.error) ? 
+			this.setState({ 
+				error: 'Something went wrong',
+				loading: false 
+			})
+		:
+			this.setState({ 
+				cats: data.result,
+				votes: this.countVotes(data.result),
+				loading: false 
+			})
+		)
 	}
 
 	countVotes = (cats) => cats.reduce((nb, cat) => nb + cat.score, 0)
 
 	render() {
-		const { cats, votes, loading } = this.state
+		const { cats, votes, error, loading } = this.state
 
 		if (loading) return <p>Loading...</p>
 
@@ -39,7 +46,7 @@ class Scoreboard extends Component {
 					<h1>Scoreboard</h1>
 					<p><Emoji symbol="🗳" />{votes} {votes > 1 ? 'votes' : 'vote' }</p>
 				</div>
-
+				{ error && <p>{error}</p> }
 				<div className="cards">
 					{ cats.length !== 0 
 						? cats.map(cat => 

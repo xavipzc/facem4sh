@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import Home from './Pages/Home'
 import Scoreboard from './Pages/Scoreboard'
 import Emoji from './Utils/Emoji';
+import { NotFound } from './Pages/NotFound';
 
 class App extends Component {
 	render() {
@@ -20,6 +21,7 @@ class App extends Component {
 					<Switch>
 						<Route exact path="/" component={ Home } />
 						<Route exact path="/scoreboard" component={ Scoreboard } />
+						<Route component={ NotFound } />
 					</Switch>
 					<footer>
 						<Link to="/scoreboard">

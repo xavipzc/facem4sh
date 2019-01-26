@@ -19,16 +19,22 @@ class Home extends Component {
 			headers: { 'Content-Type': 'application/json' }
 		})
 		.then(res => res.json())
-		// .then(data => console.log(data.result))
-		.then(data => this.setState({ 
-			cats: data.result, 
-			board: this.generateBoard(data.result),
-			loading: false 
-		}))
+		.then(data => (data.error) ?
+		this.setState({ 
+				error: 'Something went wrong',
+				loading: false 
+			})
+		:
+			this.setState({ 
+				cats: data.result, 
+				board: this.generateBoard(data.result),
+				loading: false 
+			})
+		)
 	}
 
+	// Push score to Scoreboard
 	handleClick = id => {
-		// Push result to Scoreboard
 		fetch(`/cats/${id}`, {
 			method: 'PATCH',
 			headers: { 'Content-Type': 'application/json' }
@@ -40,6 +46,7 @@ class Home extends Component {
 		})
 	}
 
+	// Generate a board of 2 cats randomly
 	generateBoard(object) {
 		const result = []
 		const cats = shuffle(object)

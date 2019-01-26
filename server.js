@@ -19,5 +19,18 @@ if (process.env.NODE_ENV === 'production') {
 app.use('/cats', catRoutes)
 app.use('/scores', scoreRoutes)
 
+app.use((req, res, next) => {
+	const err = new Error('Not found')
+	err.status = 404
+	next(err)
+})
+
+app.use((err, req, res, next) => {
+	res.status(err.status || 500)
+	res.json({
+		error: err.message
+	})
+})
+
 app.listen(port, () => 
 	console.log(`Server listening on port: ${port}`))
