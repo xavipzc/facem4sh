@@ -1,1 +1,17 @@
 @import './normalize';
+
+// Fonts
+$font: -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+
+// Colors
+$color-main: #E4C48C;
+$color-secondary: white;
+
+$color-grey: #999;
+
+body {
+	font-family: $font;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: $color-secondary;
+}

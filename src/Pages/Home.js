@@ -60,11 +60,17 @@ class Home extends Component {
 		return (
 			<div className="facemash">
 				{ error && <p>{error}</p> }
-				<div key={board[0].id}>
-					<img src={ board[0].url } onClick={ () => this.handleClick(board[0].id) } />
+				<div className="left" key={board[0].id}>
+					<div className="img-cat" 
+						style={{backgroundImage: `url(${board[0].url})`}} 
+						onClick={ () => this.handleClick(board[0].id) }
+					/>
 				</div>
-				<div key={board[1].id}>
-					<img src={ board[1].url } onClick={ () => this.handleClick(board[1].id) } />
+				<div className="right" key={board[1].id}>
+				<div className="img-cat" 
+						style={{backgroundImage: `url(${board[1].url})`}} 
+						onClick={ () => this.handleClick(board[1].id) }
+					/>
 				</div>
 			</div>
 		)

@@ -7,21 +7,22 @@ class App extends Component {
 	render() {
 		return (
 			<Router>
-				<div className="App">
-				<header className="navbar">
-					<ul>
-						<li>
-							<Link to="/">Home</Link>
-						</li>
-						<li>
-							<Link to="/scoreboard">Scoreboard</Link>
-						</li>
-					</ul>
-				</header>
+				<div className="app">
+					<header className="navbar">
+						<ul>
+							<li>
+								<Link to="/">Facemash</Link>
+							</li>
+							<li>
+								<Link to="/scoreboard">Scoreboard</Link>
+							</li>
+						</ul>
+					</header>
 					<Switch>
 						<Route exact path="/" component={ Home } />
 						{/* <Route exact path="/scoreboard" component={ ScoreBoard } /> */}
 					</Switch>
+					<footer>Facemash by Xavier Pouzenc 🚀</footer>
 				</div>
 			</Router>
 		)

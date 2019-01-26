@@ -1,0 +1,41 @@
+.app {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 10vh 80vh 10vh;
+}
+
+header,
+footer {
+	grid-column: 1 / span 2;
+}
+
+.facemash {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-column: 1 / span 2;
+	height: 100%;
+
+	.left { grid-column: 1; }
+	.right { grid-column: 2; }
+
+	.left,
+	.right {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	@media all and (max-width: 700px) {
+		.left,
+		.right {
+			grid-column: 1 / span 2;
+		}
+	}
+}
+
+header,
+footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
