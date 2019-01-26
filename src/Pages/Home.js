@@ -29,7 +29,6 @@ class Home extends Component {
 
 	handleClick = id => {
 		// Push result to Scoreboard
-		console.log(id)
 		fetch(`/cats/${id}`, {
 			method: 'PATCH',
 			headers: { 'Content-Type': 'application/json' }

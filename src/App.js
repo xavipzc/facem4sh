@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 
 import Home from './Pages/Home'
 import Scoreboard from './Pages/Scoreboard'
+import Emoji from './Utils/Emoji';
 
 class App extends Component {
 	render() {
@@ -21,7 +22,9 @@ class App extends Component {
 						<Route exact path="/scoreboard" component={ Scoreboard } />
 					</Switch>
 					<footer>
-						<Link to="/scoreboard">🐱Discover which cats rocks</Link>
+						<Link to="/scoreboard">
+							<Emoji symbol="🐱" label="cat" />Discover which cats rocks
+						</Link>
 					</footer>
 				</div>
 			</Router>

@@ -1,7 +1,7 @@
 .app {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: 10vh 80vh 10vh;
+	grid-template-rows: 10vh 1fr 10vh;
 }
 
 header,
@@ -15,6 +15,7 @@ footer,
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: 20% auto;
 	grid-column: 1 / span 2;
+	height: 70vh;
 
 	.title { grid-column: 1 / span 2; }
 	.left { grid-column: 1; }

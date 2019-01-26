@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Emoji from '../Utils/Emoji';
 
 class Scoreboard extends Component {
 
@@ -28,7 +29,7 @@ class Scoreboard extends Component {
 	countVotes = (cats) => cats.reduce((nb, cat) => nb + cat.score, 0)
 
 	render() {
-		const { cats, votes, loading, error } = this.state
+		const { cats, votes, loading } = this.state
 
 		if (loading) return <p>Loading...</p>
 
@@ -36,16 +37,19 @@ class Scoreboard extends Component {
 			<div className="scoreboard">
 				<div className="title">
 					<h1>Scoreboard</h1>
-					<p>{votes} {votes > 1 ? 'votes' : 'vote' }</p>
+					<p><Emoji symbol="🗳" />{votes} {votes > 1 ? 'votes' : 'vote' }</p>
 				</div>
 
-				<div className="table">
-					{ cats.length !== 0 ? cats.map(cat => {
-						if (cat.score) return <div key={cat.id}>
-							<div className="img-cat" style={{backgroundImage: `url(${cat.url})`}} />
-							Name : {cat.id} - Score: {cat.score}
-						</div>
-					}) : <p>No votes</p> }
+				<div className="cards">
+					{ cats.length !== 0 
+						? cats.map(cat => 
+								<div className="card" key={cat.id}>
+									<div className="img-cat" style={{backgroundImage: `url(${cat.url})`}} />
+									{cat.id}
+									<div className="score"><Emoji symbol="👍" />{cat.score}</div>
+								</div>
+							) 
+						: <div className="card">No votes</div> }
 				</div>
 			</div>
 		)

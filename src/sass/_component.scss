@@ -50,13 +50,36 @@
 		text-align: center;
 	}
 
-	.img-cat {
-		display: inline-block;
-		height: 30px;
-		width: 30px;
-		border-radius: 50%;
-		background-position: 50% 50%;
-		background-repeat: no-repeat;
-		background-size: cover;
+	.cards {
+		margin: 15px auto;
+		max-width: 30em;
+
+		.card {
+			position: relative;
+			display: block;
+			height: 50px;
+			line-height: 50px;
+			background-color: #fff;
+			margin-bottom: 5px;
+			border-radius: 6px;
+
+			.img-cat {
+				display: inline-block;
+				height: 35px;
+				width: 35px;
+				margin: 0 15px;
+				vertical-align: middle;
+				border-radius: 50%;
+				background-position: 50% 50%;
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+
+			.score {
+				position: absolute;
+				top: 0;
+				right: 20px;
+			}
+		}
 	}
 }
