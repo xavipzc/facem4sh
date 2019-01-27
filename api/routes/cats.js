@@ -29,7 +29,8 @@ router.patch('/:catsID', (req, res) => {
 		return cats
 	}, [])
 
-	// update cats locally
+	// update cats locally but we can also write into cats.json
+	// or save into a database
 	cats.images = newCats
 
 	res.json({ 'result': cats })
