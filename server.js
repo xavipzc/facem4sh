@@ -9,10 +9,10 @@ const scoreRoutes = require('./api/routes/scores')
 
 //production mode
 if (process.env.NODE_ENV === 'production') {
-		app.use(express.static(path.join(__dirname, 'client/build')))
+		app.use(express.static(path.join(__dirname, 'build')))
 
 		.get('*', (req, res) => {
-			res.sendfile(path.join(__dirname = 'client/build/index.html'))
+			res.sendfile(path.join(__dirname = 'build/index.html'))
 		})
 }
 
