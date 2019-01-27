@@ -66,7 +66,7 @@ class Home extends Component {
 		return (
 			<div className="facemash">
 				<div className="title">
-					<h1>FaceMash</h1>
+					<h1>Versus</h1>
 					<p>Which cat rocks more ? Do your choice !</p>
 				</div>
 				{ error && <p>{error}</p> }

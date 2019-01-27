@@ -5,6 +5,7 @@ import Home from './Pages/Home'
 import Scoreboard from './Pages/Scoreboard'
 import Emoji from './Utils/Emoji';
 import { NotFound } from './Pages/NotFound';
+import logo from './logo.svg'
 
 class App extends Component {
 	render() {
@@ -14,15 +15,17 @@ class App extends Component {
 					<header className="navbar">
 						<ul>
 							<li>
-								<Link to="/">Facemash</Link>
+								<Link to="/"><img src={logo} className="logo" alt="logo" /> Facesmash</Link>
 							</li>
 						</ul>
 					</header>
+
 					<Switch>
 						<Route exact path="/" component={ Home } />
 						<Route exact path="/scoreboard" component={ Scoreboard } />
 						<Route component={ NotFound } />
 					</Switch>
+
 					<footer>
 						<Link to="/scoreboard">
 							<Emoji symbol="🐱" label="cat" />Discover which cats rocks

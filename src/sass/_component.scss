@@ -10,7 +10,14 @@
 		li {
 			display: inline-block;
 			margin-right: 15px;
+			font-size: x-large;
 		}
+
+		.logo {
+			height: 6vh;
+			vertical-align: middle;
+		}
+		
 	}
 }
 
@@ -37,6 +44,13 @@
 			transform: scale(1.2);
 			box-shadow: 0px 20px 30px -10px rgba(153,153,153,0.5);
 			border: 10px solid $color-secondary;
+		}
+	}
+
+	@media all and (max-width: 700px) {
+		.img-cat {
+			height: 20vh;
+			width: 20vh;
 		}
 	}
 }
