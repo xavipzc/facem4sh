@@ -17,21 +17,22 @@ footer,
 	grid-column: 1 / span 2;
 	height: 70vh;
 
-	.title { grid-column: 1 / span 2; }
-	.left { grid-column: 1; }
-	.right { grid-column: 2; }
-
 	.left,
 	.right {
 		display: flex;
 		align-items: center;
-		justify-content: center;
 	}
+
+	.title { grid-column: 1 / span 2; }
+	.left { grid-column: 1; justify-content: flex-end; }
+	.right { grid-column: 2; justify-content: left; }
+
 
 	@media all and (max-width: 700px) {
 		.left,
 		.right {
 			grid-column: 1 / span 2;
+			justify-content: center;
 		}
 	}
 }
